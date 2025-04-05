@@ -91,7 +91,7 @@ PlasmoidItem {
         }
 
         function refresh_times() {
-            let URL = "http://api.aladhan.com/v1/timingsByCity?city=" + Plasmoid.configuration.city + "&country=" + Plasmoid.configuration.country + "&method=2";
+            let URL = "http://api.aladhan.com/v1/timings?latitude=" + Plasmoid.configuration.latitude + "&longitude=" + Plasmoid.configuration.longitude + "&method=3";
             request(URL, (o) => {
                 if (o.status === 200) {
                     let data = JSON.parse(o.responseText).data;
@@ -156,7 +156,7 @@ PlasmoidItem {
             Label {
                 id: subtitleLabel
 
-                text: Plasmoid.configuration.city + ", " + Plasmoid.configuration.country
+                text: Plasmoid.configuration.latitude + ", " + Plasmoid.configuration.longitude
                 font.pixelSize: 18
                 anchors.horizontalCenter: parent.horizontalCenter
             }

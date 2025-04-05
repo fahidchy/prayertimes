@@ -4,19 +4,19 @@ import org.kde.kirigami 2.5 as Kirigami
 import org.kde.kcmutils as KCM
 
 KCM.SimpleKCM {
-   property alias cfg_city: cityField.text
-   property alias cfg_country: countryField.text
+   property alias cfg_latitude: latitudeField.text
+   property alias cfg_longitude: longitudeField.text
 
     Kirigami.FormLayout {
       TextField {
-          id: cityField
-          Kirigami.FormData.label: i18n("City:")
-          placeholderText: i18n("eg. New York")
+          id: latitudeField
+          Kirigami.FormData.label: i18n("Latitude:")
+          placeholderText: i18n("eg. -33.426783")
       }
       TextField {
-          id: countryField
-          Kirigami.FormData.label: i18n("Country:")
-          placeholderText: i18n("eg. United States")
+          id: longitudeField
+          Kirigami.FormData.label: i18n("Longitude:")
+          placeholderText: i18n("eg. -10.743464")
       }
    }
 }
